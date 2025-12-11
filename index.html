@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Ranch Paintball | Defiende el Territorio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto+Condensed:wght@400;700&family=Rye&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // COLORES ACTUALIZADOS: Más vivos y saturados
+                        'coyote': '#eebb77',      // Antes #d2b48c (Más dorado/vivo)
+                        'olive': '#4a5d23',       // Antes #3d4b3d (Verde militar más intenso)
+                        'rust': '#cd3333',        // Antes #8b3a3a (Rojo óxido más brillante)
+                        'leather': '#794d3c',     // Antes #5d4037 (Café un poco más cálido)
+                        'gunmetal': '#263238',    // Gris Arma (Se mantiene igual, buen contraste)
+                        'paper': '#f9f3e0',       // Color Papel (Ligeramente más limpio)
+                    },
+                    fontFamily: {
+                        sans: ['"Roboto Condensed"', 'sans-serif'],
+                        western: ['"Rye"', 'serif'],
+                        military: ['"Black Ops One"', 'cursive'],
+                    },
+                    backgroundImage: {
+                        'dust-pattern': "url('https://www.transparenttextures.com/patterns/concrete-wall.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Filtro Sepia para dar toque antiguo/western */
+        .sepia-hover {
+            filter: sepia(0.5) contrast(1.1);
+            transition: all 0.4s ease;
+        }
+        .sepia-hover:hover {
+            filter: sepia(0) contrast(1);
+        }
+        
+        /* Textura de suciedad sutil sobre el fondo */
+        .grunge-overlay {
+            background-image: radial-gradient(circle, transparent 20%, #000 120%);
+        }
+    </style>
+</head>
+<body class="bg-gunmetal text-gray-200 antialiased selection:bg-rust selection:text-white bg-dust-pattern">
+
+    <nav class="fixed w-full z-50 bg-olive/95 border-b-4 border-coyote shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="relative">
+                        <img src="assets/logo.png" alt="Logo" class="relative z-10 w-100% h-14">
+                    </div>
+                    <div class="flex flex-col">
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#inicio" class="hover:text-coyote transition font-military text-lg uppercase tracking-wide">Cuartel</a>
+                        <a href="#galeria" class="hover:text-coyote transition font-military text-lg uppercase tracking-wide">Campo</a>
+                        <a href="#paquetes" class="hover:text-coyote transition font-military text-lg uppercase tracking-wide">Recompensas</a>
+                        <a href="#contacto" class="bg-rust hover:bg-red-600 text-white px-6 py-2 rounded-sm font-bold uppercase font-military tracking-widest border border-coyote shadow-[2px_2px_0px_#d2b48c] active:translate-y-1 active:shadow-none transition">
+                            Alistarse
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:hidden text-coyote text-2xl">
+                   <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1595874253163-f254e0c464b7?q=80&w=1470&auto=format&fit=crop" class="w-full h-full object-cover filter brightness-50 sepia-[0.3]" alt="Paintball Field">
+        </div>
+        <div class="absolute inset-0 grunge-overlay"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16 border-y-2 border-coyote/30 py-10 bg-black/30 backdrop-blur-sm">
+            <div class="font-military text-coyote text-lg mb-2 tracking-[0.5em] uppercase">Est. 2023 • Ensenada, B.C.</div>
+            <h1 class="font-western text-5xl md:text-8xl text-white mb-4 drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+                DEFIENDE EL <span class="text-rust">RANCHO</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto font-sans font-light border-l-4 border-rust pl-4 text-left md:text-center">
+                Donde la estrategia militar se encuentra con el espíritu libre del oeste. El mejor campo de Woodsball de la región.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#paquetes" class="bg-coyote text-olive px-8 py-4 font-black font-military text-xl uppercase tracking-wide hover:bg-white transition duration-300 border-2 border-olive shadow-lg">
+                    Ver Paquetes
+                </a>
+                <a href="https://maps.app.goo.gl/X7UeaYmBEf7xayXS6" class="bg-olive text-coyote px-8 py-4 font-bold font-military text-xl uppercase tracking-wide hover:bg-gray-800 transition duration-300 border-2 border-coyote">
+                    Ubicación
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="galeria" class="py-20 bg-olive relative pattern-dots">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/aged-paper.png')] opacity-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                <i class="fa-solid fa-star text-coyote text-2xl mb-2"></i>
+                <h2 class="font-western text-4xl md:text-6xl text-white">Terreno Hostil</h2>
+                <div class="w-32 h-1 bg-rust mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-paper p-3 pb-8 shadow-xl transform rotate-1 hover:rotate-0 transition duration-300">
+                    <div class="overflow-hidden border border-gray-400 h-64">
+                        <img src="assets/img4.webp" class="w-full h-full object-cover sepia-hover" alt="Jugadores">
+                    </div>
+                    <div class="text-center mt-3 font-western text-olive text-xl">Escuadrón Alfa</div>
+                    <div class="text-center text-xs font-sans text-gray-500 uppercase tracking-widest">Operation: Sunday Morning</div>
+                </div>
+
+                <div class="bg-paper p-3 pb-8 shadow-xl transform -rotate-1 hover:rotate-0 transition duration-300 md:-translate-y-8 z-10">
+                    <div class="overflow-hidden border border-gray-400 h-64">
+                        <img src="assets/img2.webp" class="w-full h-full object-cover sepia-hover" alt="Marcadora">
+                    </div>
+                    <div class="text-center mt-3 font-western text-olive text-xl">Armamento</div>
+                    <div class="text-center text-xs font-sans text-gray-500 uppercase tracking-widest">Full Gear Ready</div>
+                </div>
+
+                <div class="bg-paper p-3 pb-8 shadow-xl transform rotate-2 hover:rotate-0 transition duration-300">
+                    <div class="overflow-hidden border border-gray-400 h-64">
+                        <img src="assets/img1.webp" class="w-full h-full object-cover sepia-hover" alt="Campo">
+                    </div>
+                    <div class="text-center mt-3 font-western text-olive text-xl">EN ACCIÓN</div>
+                    <div class="text-center text-xs font-sans text-gray-500 uppercase tracking-widest">Zona de juego</div>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/kingranch_paintballensenada/" target="_blank" class="inline-block border-b-2 border-coyote text-coyote pb-1 hover:text-white hover:border-white transition font-military tracking-widest">
+                    PARA VER MAS IMAGENES, VISITA NUESTRAS REDES
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="paquetes" class="py-24 bg-paper text-olive relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-western text-5xl md:text-6xl text-leather mb-2">Suministros</h2>
+                <p class="font-military text-gray-600 tracking-wider">Elige tu equipo para la batalla</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="border-4 border-double border-leather p-6 text-center relative bg-[#fdfbf7]">
+                    <h3 class="font-military text-2xl text-olive mb-4 border-b-2 border-olive pb-2 inline-block">RECLUTA</h3>
+                    <div class="font-western text-4xl text-leather mb-4">$250</div>
+                    <ul class="text-left space-y-3 mb-8 font-bold text-gray-700 font-sans text-sm">
+                        <li><i class="fa-solid fa-gun text-rust mr-2"></i> Marcadora-Careta-Chaleco</li>
+                        <li><i class="fa-solid fa-circle text-rust mr-2"></i> <strong>150 tiros</strong></li>
+                        <li><i class="fa-solid fa-gas-pump text-rust mr-2"></i> 1 tanque de gas</li>
+                    </ul>
+                    <a href="#contacto" class="block bg-olive text-coyote py-3 font-military hover:bg-leather transition">RESERVAR</a>
+                </div>
+
+                <div class="border-4 border-leather p-6 text-center relative bg-[#ebe5ce] transform md:-translate-y-4 shadow-2xl">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-rust text-white font-military px-4 py-1 shadow-md rotate-1">MÁS BUSCADO</div>
+                    <h3 class="font-military text-3xl text-rust mb-4 border-b-2 border-rust pb-2 inline-block mt-4">FORAJIDO</h3>
+                    <div class="font-western text-5xl text-leather mb-4">$420</div>
+                    <ul class="text-left space-y-3 mb-8 font-bold text-gray-800 font-sans">
+                        <li><i class="fa-solid fa-gun text-rust mr-2"></i> Marcadora-Careta-Chaleco</li>
+                        <li><i class="fa-solid fa-circle text-rust mr-2"></i> <strong>420 tiros</strong></li>
+                        <li><i class="fa-solid fa-gas-pump text-rust mr-2"></i> Gas Ilimitado</li>
+                    </ul>
+                    <a href="#contacto" class="block bg-rust text-white py-4 font-military text-lg hover:bg-red-800 transition shadow-lg">LO QUIERO</a>
+                </div>
+
+                <div class="border-4 border-double border-leather p-6 text-center relative bg-[#fdfbf7]">
+                    <h3 class="font-military text-2xl text-olive mb-4 border-b-2 border-olive pb-2 inline-block">GENERAL</h3>
+                    <div class="font-western text-4xl text-leather mb-4">$300</div>
+                    <ul class="text-left space-y-3 mb-8 font-bold text-gray-700 font-sans text-sm">
+                        <li><i class="fa-solid fa-gun text-rust mr-2"></i>Marcadora-Careta-Chaleco</li>
+                        <li><i class="fa-solid fa-circle text-rust mr-2"></i> <strong>250 Tiros</strong></li>
+                        <li><i class="fa-solid fa-gas-pump text-rust mr-2"></i> 1 tanque de gas</li>
+                    </ul>
+                    <a href="#contacto" class="block bg-olive text-coyote py-3 font-military hover:bg-leather transition">RESERVAR</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="bg-gunmetal py-20 border-t-8 border-coyote relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <div class="h-[400px] border-4 border-olive rounded-sm overflow-hidden relative shadow-2xl">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        loading="lazy" 
+                        allowfullscreen
+                        class="filter sepia contrast-125 grayscale-[50%]"
+                        src="https://maps.google.com/maps?q=King+Ranch+Paintball+Ensenada&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                    <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-30">
+                        <div class="w-64 h-64 border border-red-500 rounded-full flex items-center justify-center">
+                            <div class="w-1 h-4 bg-red-500 absolute top-0"></div>
+                            <div class="w-1 h-4 bg-red-500 absolute bottom-0"></div>
+                            <div class="w-4 h-1 bg-red-500 absolute left-0"></div>
+                            <div class="w-4 h-1 bg-red-500 absolute right-0"></div>
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    <h2 class="font-western text-4xl md:text-5xl text-coyote mb-6">Punto de Encuentro</h2>
+                    <p class="text-gray-400 mb-8 font-sans text-lg">
+                        Prepara tu escuadrón y reserva tu territorio. Los fines de semana son territorio de guerra.
+                    </p>
+
+                    <div class="space-y-4">
+                        <a href="https://wa.me/5216461074619" class="flex items-center bg-olive hover:bg-olive/80 p-4 border-l-4 border-rust transition group">
+                            <i class="fa-brands fa-whatsapp text-3xl text-white mr-4"></i>
+                            <div>
+                                <div class="font-military text-coyote uppercase text-sm">Comunicación Directa</div>
+                                <div class="font-bold text-white text-xl">Reservar por WhatsApp</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/kingranch_paintballensenada/" class="flex items-center bg-gray-800 hover:bg-gray-700 p-4 border-l-4 border-pink-600 transition group">
+                            <i class="fa-brands fa-instagram text-3xl text-white mr-4"></i>
+                            <div>
+                                <div class="font-military text-gray-400 uppercase text-sm">Inteligencia Visual</div>
+                                <div class="font-bold text-white text-xl">Ver Instagram</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.facebook.com/KRpaintball" class="flex items-center bg-gray-800 hover:bg-gray-700 p-4 border-l-4 border-blue-600 transition group">
+                            <i class="fa-brands fa-facebook text-3xl text-white mr-4"></i>
+                            <div>
+                                <div class="font-military text-gray-400 uppercase text-sm">Comunidad Táctica</div>
+                                <div class="font-bold text-white text-xl">Seguir en Facebook</div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-8 text-center border-t border-olive">
+        <div class="flex justify-center items-center gap-2 mb-2">
+            <i class="fa-solid fa-star text-rust text-xs"></i>
+            <i class="fa-solid fa-star text-rust text-sm"></i>
+            <i class="fa-solid fa-star text-rust text-sm"></i>
+            <i class="fa-solid fa-star text-rust text-xs"></i>
+            <i class="fa-solid fa-star text-rust text-sm"></i>
+        </div>
+        <p class="text-coyote font-military tracking-widest text-sm">
+            KING RANCH PAINTBALL © 2023
+        </p>
+    </footer>
+
+</body>
+</html>
